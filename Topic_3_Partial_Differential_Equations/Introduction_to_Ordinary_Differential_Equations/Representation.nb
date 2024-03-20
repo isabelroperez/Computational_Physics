@@ -1,0 +1,153 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      5514,        145]
+NotebookOptionsPosition[      4845,        127]
+NotebookOutlinePosition[      5279,        144]
+CellTagsIndexPosition[      5236,        141]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"NotebookDirectory", "[", "]"}], "]"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"directorio", " ", "de", " ", "trabajo"}], " ", "*)"}]}]], "Input",\
+
+ CellChangeTimes->{{3.5907383209207773`*^9, 3.5907383455764236`*^9}, {
+  3.8144117492463903`*^9, 3.814411764151422*^9}, {3.8144203176471577`*^9, 
+  3.8144203478295527`*^9}, {3.814420410358469*^9, 3.814420423600031*^9}, {
+  3.8144205139398003`*^9, 3.814420616946876*^9}, {3.8144208278909597`*^9, 
+  3.8144208335512533`*^9}, {3.9199187752685184`*^9, 3.919918793517892*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"c43ad804-e74d-4199-893d-d28bd05792d5"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"data", "=", 
+    RowBox[{"ReadList", "[", 
+     RowBox[{"\"\<sol1.dat\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"Number", ",", "Number"}], "}"}]}], "]"}]}], ";"}], 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "lee", " ", "el", " ", "fichero", " ", "con", " ", "la", " ", 
+    "soluci\[OAcute]n", " ", "num\[EAcute]rica", " ", "obtenida", " ", "con", 
+    " ", "el", " ", "progama", " ", "de", " ", "fortran"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"plotcode", "=", 
+  RowBox[{"ListPlot", "[", "data", "]"}], 
+  RowBox[{"(*", " ", 
+   RowBox[{"representa", " ", "la", " ", "soluci\[OAcute]n"}], " ", 
+   "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.814411768241259*^9, 3.814411795430757*^9}, {
+   3.81441196126243*^9, 3.8144120151201277`*^9}, 3.814412208110565*^9, 
+   3.8144204015536747`*^9, {3.814420625773922*^9, 
+   3.8144207120668087`*^9}},ExpressionUUID->"2fc9d29a-0ec6-49fe-9835-\
+aa2d9f4a9b74"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"datmath", "=", 
+    RowBox[{"NDSolve", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"y", "''"}], "[", "x", "]"}], "+", 
+          RowBox[{"9", "*", 
+           RowBox[{"y", "[", "x", "]"}]}]}], "\[Equal]", 
+         RowBox[{"Sin", "[", "x", "]"}]}], ",", 
+        RowBox[{
+         RowBox[{"y", "[", "0", "]"}], "\[Equal]", "0"}], ",", 
+        RowBox[{
+         RowBox[{"y", "[", "2", "]"}], "\[Equal]", "1"}]}], "}"}], ",", "y", 
+      ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "0", ",", "2"}], "}"}]}], "]"}]}], ";"}], 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Mathematica", " ", "calcula", " ", "la", " ", "soluci\[OAcute]n"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"plotmath", "=", 
+    RowBox[{"Plot", "[", 
+     RowBox[{
+      RowBox[{"Evaluate", "[", 
+       RowBox[{
+        RowBox[{"y", "[", "x", "]"}], "/.", "datmath"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "0", ",", "2"}], "}"}], ",", 
+      RowBox[{"PlotStyle", "->", "Automatic"}]}], "]"}]}], ";"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "representa", " ", "la", " ", "soluci\[OAcute]n", " ", "de", " ", 
+    "Mathematica"}], " ", "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.5904750419706583`*^9, 3.5904750789160357`*^9}, {
+   3.590475112666951*^9, 3.590475136659987*^9}, {3.590475248147769*^9, 
+   3.590475271491557*^9}, {3.5904753181551037`*^9, 3.5904753190024137`*^9}, 
+   3.590475416547421*^9, {3.5904754610111847`*^9, 3.59047547746497*^9}, {
+   3.590477180862651*^9, 3.590477184269307*^9}, {3.590477219406913*^9, 
+   3.590477224334362*^9}, {3.590478099359614*^9, 3.5904782536139517`*^9}, 
+   3.5904879750699463`*^9, {3.590738350700856*^9, 3.590738363652433*^9}, {
+   3.590738475116829*^9, 3.590738506732757*^9}, {3.590743400051512*^9, 
+   3.590743417515441*^9}, {3.590750598019065*^9, 3.590750652794999*^9}, {
+   3.814412139085457*^9, 3.814412142108079*^9}, {3.814412185632551*^9, 
+   3.814412188980768*^9}, {3.814420722105176*^9, 3.814420757912389*^9}, {
+   3.8144208150384293`*^9, 
+   3.814420822918021*^9}},ExpressionUUID->"e6a5672b-f53e-4f3f-8f82-\
+8a09fbc3caa0"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{"plotmath", ",", "plotcode"}], "]"}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"compara", " ", "ambas", " ", "soluciones"}], "*)"}]}]], "Input",
+ CellChangeTimes->{{3.814412022961197*^9, 3.814412044924746*^9}, 
+   3.814412217498213*^9, {3.8144207694664392`*^9, 
+   3.814420794689621*^9}},ExpressionUUID->"c68e6f4a-6ce0-4c09-8e09-\
+6f83f9cbe77f"]
+},
+WindowSize->{1022.25, 671.25},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"13.3 para Microsoft Windows (64-bit) (July 24, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"ccb1b2f2-64a3-4998-a41b-6022ec121621"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 665, 12, 64, "Input",ExpressionUUID->"c43ad804-e74d-4199-893d-d28bd05792d5"],
+Cell[1225, 34, 960, 23, 146, "Input",ExpressionUUID->"2fc9d29a-0ec6-49fe-9835-aa2d9f4a9b74"],
+Cell[2188, 59, 2238, 54, 177, "Input",ExpressionUUID->"e6a5672b-f53e-4f3f-8f82-8a09fbc3caa0"],
+Cell[4429, 115, 412, 10, 64, "Input",ExpressionUUID->"c68e6f4a-6ce0-4c09-8e09-6f83f9cbe77f"]
+}
+]
+*)
+
